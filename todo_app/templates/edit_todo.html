@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Edit Todo{% endblock %}
+
+{% block content %}
+<div class="max-w-xl mx-auto p-6 bg-white shadow-md rounded">
+  <h2 class="text-2xl font-semibold mb-4">Edit Todo</h2>
+  <form method="post">
+    <div class="mb-4">
+      <label for="name" class="block font-medium mb-1">Name</label>
+      <input type="text" id="name" name="name" value="{{ todo.name }}" class="w-full px-3 py-2 border rounded" required>
+    </div>
+
+    <div class="mb-4">
+      <label for="description" class="block font-medium mb-1">Description</label>
+      <textarea id="description" name="description" class="w-full px-3 py-2 border rounded" required>{{ todo.description }}</textarea>
+    </div>
+
+    <div class="mb-4">
+      <label for="start_time" class="block font-medium mb-1">Start Time</label>
+      <input type="datetime-local" id="start_time" name="start_time" value="{{ todo.start_time|replace(' ', 'T') }}" class="w-full px-3 py-2 border rounded" required>
+    </div>
+
+    <div class="mb-4">
+      <label for="end_time" class="block font-medium mb-1">End Time</label>
+      <input type="datetime-local" id="end_time" name="end_time" value="{{ todo.end_time|replace(' ', 'T') }}" class="w-full px-3 py-2 border rounded" required>
+    </div>
+
+    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save Changes</button>
+  </form>
+</div>
+{% endblock %}

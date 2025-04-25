@@ -1,0 +1,13 @@
+
+version: '3.8'
+services:
+  postgres_db:
+    container_name: container_2
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_DB: mydb
+      POSTGRES_PASSWORD: mypassword
+    
+    ports:
+      - "5432:5433"

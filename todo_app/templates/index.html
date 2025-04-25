@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="max-w-6xl mx-auto px-4 py-10">
+  <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">
+    Welcome to the Todo App
+  </h1>
+  <p class="text-center text-gray-600 mb-10">
+    This is a simple fullstack Todo application built with FastAPI and Jinja2
+    templates.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {% for todo in todos %}
+    <div
+      class="bg-white shadow-md rounded-lg p-5 hover:shadow-lg transition duration-200"
+    >
+      <a
+        href="/todos/{{ todo.id }}"
+        class="text-xl font-semibold text-d94a3c mb-2 hover:underline block"
+      >
+        {{ todo.name }}
+      </a>
+
+      <p class="text-red-700 mb-2">{{ todo.description }}</p>
+      <p class="text-sm text-gray-500">
+        <strong>Start:</strong> {{ todo.start_time }}
+      </p>
+      <p class="text-sm text-gray-500">
+        <strong>End:</strong> {{ todo.end_time }}
+      </p>
+      <p class="text-sm text-gray-500">
+        <strong>Status:</strong> {{ todo.status }}
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="mt-10 flex justify-center space-x-4">
+    <!-- <a href="/todos" class="bg-[#d94a3c] hover:bg-[#b63c30] text-white px-6 py-2 rounded-md shadow">
+      View All Todos
+    </a> -->
+    <a
+      href="/todos/create"
+      class="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-md shadow"
+    >
+      Add New Todo
+    </a>
+  </div>
+</div>
+{% endblock %}
