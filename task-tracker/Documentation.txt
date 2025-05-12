@@ -1,0 +1,3 @@
+During the course of this guided project, I have implemented several features, learned new things and faced some challenges. I implemented a priority list, a search feature, a statistic feature and a category feature for this application. I learnt more about typescript and javascript syntax as well as the main difference between commonjs and es6+ standard in javascript.
+
+I also learnt about the importance of typing in typescript and how modularizing our code (with es6+) makes things work more efficiently. I faced a few challenges with implementing the statistics function, implementing a due date (and ultimately gave up on it), and sometimes running my typescript code (in developer mode). I ultimately stuck to compiling and running the code.
